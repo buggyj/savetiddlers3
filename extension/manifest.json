@@ -1,0 +1,40 @@
+{
+    "name": "Save Tiddlers3",
+    "version": "0.1",
+    "manifest_version": 3,
+     
+     "action": {
+      "default_icon": {
+         "48": "saver48.png"
+      },
+      "default_popup": "popup.html"
+   },
+    "icons": {
+
+		"16": "saver16.png",
+		"48": "saver48.png",
+		"128": "saver128.png"
+	},
+    "content_scripts" : [ {
+		"js" : [
+			"contentscript.js"
+		],
+      "matches" : [
+        "file:///*"
+      ],
+		"run_at" : "document_start"
+	} ],
+    "background": {
+            "service_worker": "background.js",
+            "scripts": ["background.js"]
+    },
+  "options_ui": {
+    "page": "options.html"
+  },
+     "short_name": "SaveTids",
+
+    "permissions": [
+		"storage" ,
+        "downloads"
+    ]
+}
